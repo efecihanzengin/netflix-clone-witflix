@@ -305,10 +305,34 @@ main > * {
     text-decoration: underline;
 }
 
-/* Liste noktalarını kaldırmak için */
+
 ul, ol {
     list-style: none;
 }
 
-/* Eğer spesifik bir liste için nokta istiyorsanız, 
-o liste için ayrıca list-style tanımlayabilirsiniz */
+
+footer {
+    background: white;
+    padding: 2rem;
+    margin-top: 2rem;
+    display: flex;
+    justify-content: space-between;
+}
+  
+footer > div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* İsteğe bağlı, metinlerin sola yaslanması için */
+    gap: 1rem; /* Öğeler arasında boşluk için */
+}
+  
+.footer-link {
+   margin-bottom: 5px;
+   margin-top: 5px;
+}
+
+footer img {
+    width: auto; /* İstediğiniz boyuta göre ayarlayın */
+    height: 50px;
+}
+
