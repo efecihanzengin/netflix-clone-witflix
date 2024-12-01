@@ -15,6 +15,22 @@ body {
     color: #ff4444;
 }
 
+.suggestion-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 0 2rem;
+}
+
+.suggestion-item {
+    width: 25%;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    padding: 4rem;
+}
+
+
 /* Header Stili */
 header {
     display: flex;
@@ -88,6 +104,7 @@ nav a {
     justify-content: space-between;
     align-items: center;
     padding: 1rem 2rem;
+    margin-bottom: 2rem;
 }
 
 .movie-grid {
@@ -105,45 +122,64 @@ nav a {
 }
 
 .movie-info {
-    padding: 1rem;
+    padding: 1.5rem;
 }
 
 .movie-title {
     font-size: 18px;
-    margin-bottom: 0.5rem;
+    margin-bottom: 1rem;
 }
 
 .movie-meta {
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 20px;
     color: #666;
     font-size: 14px;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
     flex-wrap: nowrap;
     width: 100%;
 }
 
-.play-now {
+.btn {
     display: inline-flex;
     align-items: center;
     gap: 10px;
-    background-color: #ff4444;
-    color: white;
-    padding: 12px 24px;
-    border-radius: 25px;
-    font-size: 16px;
-    font-weight: 500;
     text-decoration: none;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(255, 68, 68, 0.3);
+    cursor: pointer;
 }
 
-.play-now:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(255, 68, 68, 0.4);
-    background-color: #ff3333;
+.btn-lg {
+    background-color: #ff0000;  /* YouTube kırmızısı */
+    color: white;
+    padding: 12px 24px;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 500;
+    transition: background-color 0.2s;
 }
+
+.btn-lg:hover {
+    background-color: #cc0000;  /* Hover'da biraz daha koyu kırmızı */
+}
+
+.play-now {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.play-now::before {
+    content: '';
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 8px 0 8px 12px;
+    border-color: transparent transparent transparent #ffffff;  /* Beyaz üçgen play ikonu */
+}
+
+
 
 /* Footer Stili */
 footer {
@@ -227,6 +263,14 @@ main p {
     color: #333;
 }
 
+main {
+    padding: 2rem;
+}
+
+main > * {
+    margin-bottom: 2rem;
+}
+
 /* Mobil cihazlar için responsive ayar */
 @media screen and (max-width: 768px) {
     main p {
@@ -234,21 +278,37 @@ main p {
     }
 }
 
-main {
-    padding: 40px 80px 40px 40px;
-    max-width: 1400px;
-    margin: 0 auto;
+.suggestion-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    margin-top: 3rem;
+    margin-bottom: 2rem;
 }
 
-/* Mobil cihazlar için responsive padding */
-@media screen and (max-width: 768px) {
-    main {
-        padding: 20px;
-    }
+.suggestion-title h2 {
+    font-size: 20px;
+    color: #333;
+    margin: 0;
+    font-weight: 500;
 }
 
-ul {
-    list-style: none; /* Noktaları kaldır */
-    padding-left: 0; /* Sol padding'i kaldır */
-    margin: 10px 0; /* Üst ve alttan boşluğu koruyalım */
+.suggestion-title a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    font-size: 16px;
 }
+
+.suggestion-title a:hover {
+    text-decoration: underline;
+}
+
+/* Liste noktalarını kaldırmak için */
+ul, ol {
+    list-style: none;
+}
+
+/* Eğer spesifik bir liste için nokta istiyorsanız, 
+o liste için ayrıca list-style tanımlayabilirsiniz */
