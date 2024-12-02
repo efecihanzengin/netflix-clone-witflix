@@ -336,3 +336,11 @@ footer img {
     height: 50px;
 }
 
+footer > div:first-child {
+    flex: 0 0 50%; /* İlk div genişliği %50 */
+}
+
+footer > div:not(:first-child) {
+    flex: 1; /* Diğer div'ler kalan alanı paylaşır */
+    align-items: center; /* İçerikleri ortalamak için */
+}
