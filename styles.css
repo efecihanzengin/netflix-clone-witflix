@@ -188,16 +188,8 @@ footer {
     margin-top: 2rem;
 }
 
-.footer-links {
-    display: flex;
-    gap: 2rem;
-    margin-bottom: 1rem;
-}
 
-.footer-links a {
-    text-decoration: none;
-    color: #333;
-}
+
 
 .social-links {
     display: flex;
@@ -329,7 +321,10 @@ footer > div {
 .footer-link {
    margin-bottom: 5px;
    margin-top: 5px;
+   
 }
+
+
 
 footer img {
     width: auto; /* İstediğiniz boyuta göre ayarlayın */
@@ -343,4 +338,40 @@ footer > div:first-child {
 footer > div:not(:first-child) {
     flex: 1; /* Diğer div'ler kalan alanı paylaşır */
     align-items: center; /* İçerikleri ortalamak için */
+}
+
+/* Mobil cihazlar için responsive ayarlar */
+@media screen and (max-width: 768px) {
+    
+    section {
+        display: none;
+    }
+
+    
+    footer {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    
+    footer > div {
+        width: 100%;
+    }
+
+    
+    footer > div:not(:first-child) {
+        align-items: flex-start;
+    }
+
+    
+    footer > div:not(:first-child) > * {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    
+    .social-media-icons,
+    .app-store-icons {
+        flex-direction: row;
+    }
 }
