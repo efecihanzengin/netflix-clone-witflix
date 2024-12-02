@@ -1,3 +1,4 @@
+/* Global Styles */
 * {
     margin: 0;
     padding: 0;
@@ -9,29 +10,11 @@ body {
     background-color: #f5f5f5;
 }
 
-.logo-text {
-    font-size: 36px;
-    font-weight: bold; 
-    color: #ff4444;
+ul, ol {
+    list-style: none;
 }
 
-.suggestion-content {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    padding: 0 2rem;
-}
-
-.suggestion-item {
-    width: 25%;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    overflow: hidden;
-    padding: 4rem;
-}
-
-
-/* Header Stili */
+/* Header Styles */
 header {
     display: flex;
     justify-content: space-between;
@@ -41,9 +24,10 @@ header {
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
-.movie-name {
-    font-size: 48px;
-    font-weight: bold;
+.logo-text {
+    font-size: 36px;
+    font-weight: bold; 
+    color: #ff4444;
 }
 
 .logo {
@@ -84,63 +68,34 @@ nav a {
     transform: translateY(-50%);
     width: 16px;
     height: 16px;
-    background-image: url('../icons/search.png');
     background-size: contain;
     background-repeat: no-repeat;
     pointer-events: none;
 }
 
-.search-icon {
-    position: absolute;
-    right: 10px;
-    width: 16px;
-    height: 16px;
-    pointer-events: none;
-}
-
-/* Film Kartları Stili */
-.section-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 2rem;
-    margin-bottom: 2rem;
-}
-
-.movie-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
+/* Main Content Styles */
+main {
     padding: 2rem;
 }
 
-.movie-card {
-    background: white;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+main > * {
+    margin-bottom: 2rem;
 }
 
-.movie-info {
-    padding: 1.5rem;
+.movie-name {
+    font-size: 48px;
+    font-weight: bold;
 }
 
-.movie-title {
-    font-size: 18px;
-    margin-bottom: 1rem;
+main p {
+    width: 60%;
+    text-align: left;
+    line-height: 1.6;
+    margin: 20px 0;
+    color: #333;
 }
 
-.movie-meta {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    color: #666;
-    font-size: 14px;
-    margin-bottom: 1.5rem;
-    flex-wrap: nowrap;
-    width: 100%;
-}
-
+/* Buttons and Common Classes */
 .btn {
     display: inline-flex;
     align-items: center;
@@ -150,7 +105,7 @@ nav a {
 }
 
 .btn-lg {
-    background-color: #ff0000;  /* YouTube kırmızısı */
+    background-color: #ff0000;
     color: white;
     padding: 12px 24px;
     border-radius: 4px;
@@ -160,7 +115,7 @@ nav a {
 }
 
 .btn-lg:hover {
-    background-color: #cc0000;  /* Hover'da biraz daha koyu kırmızı */
+    background-color: #cc0000;
 }
 
 .play-now {
@@ -176,38 +131,10 @@ nav a {
     height: 0;
     border-style: solid;
     border-width: 8px 0 8px 12px;
-    border-color: transparent transparent transparent #ffffff;  /* Beyaz üçgen play ikonu */
+    border-color: transparent transparent transparent #ffffff;
 }
 
-
-
-/* Footer Stili */
-footer {
-    background: white;
-    padding: 2rem;
-    margin-top: 2rem;
-}
-
-
-
-
-.social-links {
-    display: flex;
-    gap: 1rem;
-    margin: 1rem 0;
-}
-
-.app-links {
-    display: flex;
-    gap: 1rem;
-}
-
-.footer-text {
-    color: #666;
-    font-size: 14px;
-    margin-top: 1rem;
-}
-
+/* Movie Detail Styles */
 .movie-detail-title {
     font-weight: bold;
     color: red;
@@ -247,29 +174,7 @@ footer {
     color: #666;
 }
 
-main p {
-    width: 60%;
-    text-align: left;
-    line-height: 1.6; /* Okunabilirlik için satır yüksekliği */
-    margin: 20px 0;
-    color: #333;
-}
-
-main {
-    padding: 2rem;
-}
-
-main > * {
-    margin-bottom: 2rem;
-}
-
-/* Mobil cihazlar için responsive ayar */
-@media screen and (max-width: 768px) {
-    main p {
-        width: 90%; /* Mobil ekranlarda daha geniş alan kullanımı */
-    }
-}
-
+/* Suggestion Section Styles */
 .suggestion-title {
     display: flex;
     justify-content: space-between;
@@ -297,12 +202,21 @@ main > * {
     text-decoration: underline;
 }
 
-
-ul, ol {
-    list-style: none;
+.suggestion-content {
+    display: flex;
+    justify-content: space-around;
+    padding: 0 2rem;
 }
 
+.suggestion-item {
+    width: 25%;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    padding: 4rem;
+}
 
+/* Footer Styles */
 footer {
     background: white;
     padding: 2rem;
@@ -310,68 +224,82 @@ footer {
     display: flex;
     justify-content: space-between;
 }
-  
+
 footer > div {
     display: flex;
     flex-direction: column;
-    align-items: flex-start; /* İsteğe bağlı, metinlerin sola yaslanması için */
-    gap: 1rem; /* Öğeler arasında boşluk için */
-}
-  
-.footer-link {
-   margin-bottom: 5px;
-   margin-top: 5px;
-   
-}
-
-
-
-footer img {
-    width: auto; /* İstediğiniz boyuta göre ayarlayın */
-    height: 50px;
+    align-items: flex-start;
+    gap: 1rem;
 }
 
 footer > div:first-child {
-    flex: 0 0 50%; /* İlk div genişliği %50 */
+    flex: 0 0 50%;
 }
 
 footer > div:not(:first-child) {
-    flex: 1; /* Diğer div'ler kalan alanı paylaşır */
-    align-items: center; /* İçerikleri ortalamak için */
+    flex: 1;
+    align-items: center;
 }
 
-/* Mobil cihazlar için responsive ayarlar */
+.footer-link {
+    margin: 5px 0;
+}
+
+.footer-text {
+    color: #666;
+    font-size: 14px;
+    margin-top: 1rem;
+}
+
+footer img {
+    width: auto;
+    height: 50px;
+}
+
+.social-media-icons,
+.app-store-icons {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-media-icons img {
+    width: 30px;
+    height: 30px;
+}
+
+.app-store-icons img {
+    width: 120px;
+    height: auto;
+}
+
+/* Responsive Styles */
 @media screen and (max-width: 768px) {
-    
+
+    main p {
+        width: 90%;
+    }
+
     section {
         display: none;
     }
 
-    
     footer {
         flex-direction: column;
         align-items: stretch;
     }
 
-    
     footer > div {
         width: 100%;
+        margin-bottom: 1rem;
     }
 
-    
     footer > div:not(:first-child) {
         align-items: flex-start;
     }
 
-    
     footer > div:not(:first-child) > * {
-        flex-direction: column;
+        
         align-items: flex-start;
     }
 
-    
-    .social-media-icons,
-    .app-store-icons {
-        flex-direction: row;
-    }
 }
